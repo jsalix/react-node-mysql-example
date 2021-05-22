@@ -6,12 +6,12 @@ const App = ({apiBaseUrl}: {apiBaseUrl: string}) => {
     const [name, setName] = useState<string>()
 
     const getName = async () => {
-        const res = await fetch(`${apiBaseUrl}/name`)
+        const res = await fetch(`http://${apiBaseUrl}/name`)
         const n = await res.text()
         setName(n)
     }
     const putName = () => {
-        fetch(`${apiBaseUrl}/name`, {
+        fetch(`http://${apiBaseUrl}/name`, {
             method: 'PUT',
             body: JSON.stringify({
                 id: id,
